@@ -1,0 +1,34 @@
+diff -rq HelloWorld_gcc_arm_lpc1768/ HelloWorld_uvision_lpc1768/
+Only in HelloWorld_uvision_lpc1768/HelloWorld: HelloWorld.uvopt
+Only in HelloWorld_uvision_lpc1768/HelloWorld: HelloWorld.uvproj
+Only in HelloWorld_gcc_arm_lpc1768/HelloWorld: Makefile
+Only in HelloWorld_uvision_lpc1768/HelloWorld/mbed/LPC1768: ARM
+Only in HelloWorld_gcc_arm_lpc1768/HelloWorld/mbed/LPC1768: GCC_ARM
+
+
+HelloWorld_gcc_arm_lpc1768/HelloWorld
+Library files:
+bash-4.2$ find . -name *.a
+./mbed/LPC1768/GCC_ARM/libmbed.a
+./mbed/LPC1768/GCC_ARM/libcapi.a
+
+Object files:
+bash-4.2$ find . -name *.o
+./mbed/LPC1768/GCC_ARM/cmsis_nvic.o
+./mbed/LPC1768/GCC_ARM/startup_LPC17xx.o
+./mbed/LPC1768/GCC_ARM/core_cm3.o
+./mbed/LPC1768/GCC_ARM/system_LPC17xx.o
+
+HelloWorld_gcc_arm_lpc1768/ HelloWorld_uvision_lpc1768/
+bash-4.2$ find . -name *.o
+./mbed/LPC1768/ARM/sys.o
+./mbed/LPC1768/ARM/cmsis_nvic.o
+./mbed/LPC1768/ARM/startup_LPC17xx.o
+./mbed/LPC1768/ARM/core_cm3.o
+./mbed/LPC1768/ARM/system_LPC17xx.o
+
+bash-4.2$ cd HelloWorld_uvision_lpc1768/HelloWorld/
+bash-4.2$ find . -name *.ar
+./mbed/LPC1768/ARM/capi.ar
+./mbed/LPC1768/ARM/mbed.ar
+
