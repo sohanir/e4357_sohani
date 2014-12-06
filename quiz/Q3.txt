@@ -1,0 +1,43 @@
+BEGIN
+--------------------------------------------------------------------
+1. What is the _mask value for LED1? 
+   What is the address of FIOSET?
+LED1 is at Port 1 Pin 18 (Byte 2)
+GPIO Base address = 0x2009C000UL
+LED1 address: 0x2009C036
+mask = 0x1 << 0x1E i.e 0x10000000
+
+
+--------------------------------------------------------------------
+2. What is the RS232 Frame?
+RS232 frame consists of a Start and Stop bit around each byte transfered
+
+
+
+
+--------------------------------------------------------------------
+3. Explain the start and stop conditions of i2c?
+Start condition: High to Low transition of SDA when SCL is kept high
+Stop condition: Low to high transition of SDA when SCL is kept high
+
+
+
+
+
+--------------------------------------------------------------------
+4. Is the i2c acknowledge SDA LOW or SDA HIGH?
+Each byte is acknowledged by 1 bit from the receiver during which transmitter reliqunishes control of SDA, SDA is low at this time. 
+
+
+
+
+
+--------------------------------------------------------------------
+5. Tell me about the DDR3 write leveling Concept in one sentence.  
+   (ref: slides)
+DDR3 write levelling is used to manage the number of write strobes (denoted by DQS) across the memory device to avoid unbalanced loading of the board.
+
+
+
+
+END

@@ -1,0 +1,6 @@
+As per this file in mbed library: PinNames for LPC1768 target
+LED1 is at Port 1 pin 18. 
+As per the PinName enum, this implies
+Port1 pin 18 is at 2009C036
+
+Using libraries is a lot cleaner however, understanding how to control pins directly enables the programmer to not depend on pre-compiled/tested APIs and instead use the entire mbed system as he pleases

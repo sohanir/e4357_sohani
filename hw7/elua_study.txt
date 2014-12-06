@@ -1,0 +1,9 @@
+Using eLua: Setup Tera Term 
+Port setup: 115200 baud (38400 for STR7), 8N1(8 data bits, no parity, one stop bit).
+flow control: none, unless your eLua image is configured to use hardware flow control/
+newline handling: "CR" on receive, "CR+LF" on send (some terminal programs won’t give you a choice here).
+
+eLua Web Builder: Build eLua image for LPC1768 mbed board and load the bin file/save the elf file.
+http://www.eluaproject.net/get-started/downloads
+
+Copy and download Hello.elua to the chip and run it from Tera Term.

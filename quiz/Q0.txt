@@ -1,0 +1,23 @@
+
+1. Search: "firmware" at Google
+   https://www.google.com/search?sourceid=chrome-psyapi2&ion=1&espv=2&ie=UTF-8&q=firmware
+
+. . . 
+. . . 
+. . . 
+. . . 
+. . . 
+. . . 
+. . . 
+. . . 
+. . . 
+
+2. Search results are returned within 0.36 seconds.
+
+What is happening in the background?
+Keyboard input interrupts CPU to forward it to the browser application
+Browser application then combines this information with its own cookies to pipe a query to the google server over ethernet or Wifi connection. 
+The ethernet frame encapuslated into an 802.11 packet or sent over ethernet cable is intercepted by  an access point /eventually a switch point and then eventually to the intended IP address (Google server). 
+Google server possibly implements a hashing algorithm to match it to known queries. Matching queries are sent back to the browswer application.
+User selects a query or continues to type. This loop repeats untill a querie is finalized. 
+Google responds with the results that match this query. 

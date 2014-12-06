@@ -1,0 +1,80 @@
+BEGIN
+--------------------------------------------------------------------
+Q1: Implement the following inline functions: 
+inline int CircularBufferIsFull(CircularBuffer* que) 
+inline int CircularBufferIsEmpty(CircularBuffer* que) 
+
+Answer is at: https://github.com/sohanir/circular_buffer
+
+
+
+--------------------------------------------------------------------
+Q2: How to compute "Interrupt Latency"?
+Various factors that contribute to interrupt latency - 
+# of interrupts enables/ interrupt service architecture i.e can interrupts be nested, do interrupts have a priority over one another, are they enabled and how long afer the pending bit is it, the ISR is actually executed  depending on the processor's handling of interrupt (sequence) - do they have a register bank to store current execution context, do they have to push context to the stack and are the interrupts vectored. Interrupt latency can be measured using an oscilloscope by feeding a square wave input to the interrupt line at a known frequency (period) and then toggling an GPIO upon servicing that interrupt; this measurment will include software overhead as well.  However, there's only a reasonable way to estimate interrupt latency based on various factors. There's no way to compute it deterministically for a given system. 
+
+
+--------------------------------------------------------------------
+Q3: Serial pc(USBTX, USBRX); // tx, rx 
+    What API (function) do you use to change the baud rate?
+
+Use baud function of the serial port object to set baud rate as follows
+async_port.baud(9600);
+--------------------------------------------------------------------
+Q4: How many bit(s) does TDO have? Is TDO an input or output type? (Ref: JTAG Pins) 
+
+1 bit per jtag clock
+output signal
+
+
+
+
+--------------------------------------------------------------------
+Q5:
+What is the address of ledArr[0]? 
+What is the address of ch? 
+Address of LED1: 0x2009C036
+Address of ch: some address on the heap
+
+/* 
+* Enter a hex number [0-9a-fA-F]; Decode it in 4-bit binary format and display them on 4 on board leds. 
+*/ 
+
+#include "mbed.h" 
+
+Serial pc(USBTX, USBRX); // tx, rx 
+DigitalOut ledArr[4] = {DigitalOut(LED1), DigitalOut(LED2), DigitalOut(LED3), DigitalOut(LED4)}; 
+void DisplayLed(int ch) 
+{ 
+	int i=0;
+
+	if (ch>='0' && ch<='9')
+		ch-='0';
+	else if (ch>='A' && ch<='F') {
+		ch-='A';
+		ch+=10;
+	} else if (ch>='a' && ch<='f') {
+		ch-='a';
+		ch+=10;
+	} else
+		ch=0;
+
+	for (i=0; i<4; i++) { 
+		if(ch& (1<<i))
+			ledArr[i] = 1; 
+		else
+			ledArr[i] = 0;
+	} 
+} 
+
+int main(void) { 
+	int ch; 
+	pc.baud(9600); 
+	pc.printf("\r\nHello World!"); 
+	while(1) { 
+		pc.printf("\r\nEnter:"); 
+		ch = pc.getc(); 
+		pc.putc(ch); 
+		DisplayLed(ch); 
+	} 
+}
