@@ -1,0 +1,36 @@
+Motorola Bravo
+
+Device spec:
+General	2G Network	GSM 850/ 900/ 1900
+	3G Network	HSDPA 850/1900
+SIM	Mini-SM
+	Display		TFT capacitive touch screen
+Sound	Alter types	Vibration, ringtones
+	Loudspeaker	Loudspeaker, 2.5mm Jack
+Data	GPRS		Class 12, 32-48 Kbps
+	EDGE		Class 12
+	UMTS		HSDPA 7.2Mbps, HSUPA 2 Mbps
+	WLAN		Wifi 802.11 b/g/n
+	Bluetooth	Yes, v2.1 with A2DP
+	USB		Yes, MicroUSB v2.0
+Camera	Primary		3.15 MP, 2048 x 1536 pixels
+	Secondary	No
+Features	
+	OS		Android OS v2.1 (Éclair)
+	Chipset		TI OMAP 3630
+	CPU		800Mhz Cortext A-8
+	Sensors		Accelerometer, proximity sensor, compass
+	Radio		Stereo FM 
+Memory	Internal	512MB RAM, 2048 MB ROM
+			microSD, upto 32GB, 2GB included
+Battery	Li-Ion 1530 mAh battery
+
+A-8 specifiction
+Frequency: 600 Mhz to 1 Ghz
+Architecture: Superscalar, SIMD processing for multimedia
+L1 Data cache size: 32K 
+L1 Instruction cache size: 32K 4 way set associative cache
+L2 cache size : Upto 256KB
+Memory interface (Dual channel) LP DDR 200Mhz
+
+Datasheet: http://www.ti.com/lit/ug/swpu177aa/swpu177aa.pdf
